@@ -3,11 +3,14 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
-class Solution(object):
-    def inorderTraversal(self, root):
-        if root is None:
-            return []
-        return self.inorderTraversal(root.left)+[root.val]+self.inorderTraversal(root.right)
+# class Solution(object):
+def inorderTraversal(root):
+    if root is None:
+        return []
+    return inorderTraversal(root.left)+[root.val]+inorderTraversal(root.right)
      
-      
-        
+     
+tree=TreeNode(1) 
+tree.right=TreeNode(2)   
+tree.right.left=TreeNode(3)
+print(inorderTraversal(tree))     
