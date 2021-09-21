@@ -9,16 +9,16 @@ def sumOfLeaves(node):
     global answer
     answer= 0
 
-    def dfs(root):
+    def dfs(root,isLeft):
         global answer
 
         if not root :
             return None
-        if not root.left and not root.right:
+        if not root.left and not root.right and isLeft:
             answer += root .val
-        dfs(root.left)
-        dfs(root.right)
-    dfs(node)
+        dfs(root.left,1)
+        dfs(root.right,0)
+    dfs(node,0)
     return answer
 
 

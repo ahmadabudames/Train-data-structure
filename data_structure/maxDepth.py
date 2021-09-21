@@ -3,11 +3,25 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
-class Solution(object):
-    def max_depth(self,root):
+
+
+def max_depth(root):
         if not root :
             return 0
-        return 1+ max(self.max_depth(root.left),self.max_depth(root.right))
+        rl=  max_depth(root.left)  
+        rr= max_depth(root.right)
+        return 1+ max(rl,rr)
+
+
+
+tree1=TreeNode(1) 
+tree1.right=TreeNode(2)   
+tree1.left=TreeNode(3)
+
+
+
+
+print(max_depth(tree1))         
 
 
         
